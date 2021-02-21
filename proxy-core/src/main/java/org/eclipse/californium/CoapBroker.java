@@ -134,7 +134,7 @@ public class CoapBroker implements BrokerInterface {
         for (int port : ports) {
             addEndpoint(new CoapEndpoint(port, this.config));
         }
-	System.out.println("HOLAAAAAAA");
+
     }
 
     /**
