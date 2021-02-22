@@ -163,12 +163,12 @@ public class App
 			servidorCoAP.setProtocoloInteraccionCoap(protocoloInteraccionCoap);//se le asigna el gestor de recursos al server una vez creado el server para evitar el problema de nullpointer en la referencia
 
 			// Arranco todos los servidores/brokers
-			servidorCoAP.start();		
-			servidorHTTP.start();
-			servidorHTTPs.start();
-
 			final List<? extends InterceptHandler> userHandlers = Arrays.asList(new PublisherListener(protocoloInteraccionMqtt));
 			mqttBroker.startServer(config, userHandlers);
+			
+			servidorCoAP.start();		
+			servidorHTTP.start();
+			servidorHTTPs.start();			
 
 			System.out.println("Servidores corriendo, presionar ctrl-c para detenerlo..");
 
